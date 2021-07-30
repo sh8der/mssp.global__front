@@ -1,0 +1,73 @@
+.maintenance {
+  $self: &;
+  position: relative;
+  height: 100vh;
+
+  background-image: url("../images/dist/bg.jpg");
+  background-position: center center;
+  background-size: cover; 
+
+  display: flex;
+  align-items: center;
+
+  border-bottom: rem(1) solid $accent;
+
+  // padding-top: rem(100);
+  z-index: 1;
+
+  &__row {
+    display: flex
+  }
+
+  &__img {
+    @include col();
+    @include size(2);
+    @include shift-left(2);
+  }
+
+  &__text {
+    @include col();
+    @include size(8);
+  }
+
+  &__title {
+    color: #fff;
+    font-size: rem(50);
+    font-weight: 600;
+    text-shadow: 0 rem(3) rem(8.6) rgba($color: #000000, $alpha: 0.54);
+
+    // margin-top: rem(-20);
+    margin-bottom: rem(25);
+
+    // @include size(7);
+  }
+
+  &__description {
+    font-size: rem(30);
+    color: rgba($color: #e1e1e1, $alpha: 0.5);
+    line-height: rem(18);
+    font-weight: 500;
+
+    // @include size(6);
+  }
+
+  &__title,
+  &__description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: rem(70);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url('../images/dist/blue-gradient.png');
+    background-position: bottom center;
+    background-repeat: repeat-x;
+  }
+
+}

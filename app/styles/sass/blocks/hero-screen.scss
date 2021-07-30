@@ -1,0 +1,73 @@
+.hero-screen {
+  $self: &;
+  position: relative;
+  height: rem(810);
+
+  @include xs(height, auto);
+  @include xs(padding-top, rem(150));
+  @include xs(padding-bottom, rem(150));
+
+  background-image: url("../images/dist/bg.jpg");
+  background-position: center center;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+
+  border-bottom: rem(1) solid $accent;
+
+  // padding-top: rem(100);
+  z-index: 1;
+
+  &__title {
+    font-size: rem(50);
+    font-weight: 600;
+    text-shadow: 0 rem(3) rem(8.6) rgba($color: #000000, $alpha: 0.54);
+
+    // margin-top: rem(-20);
+    margin-bottom: rem(25);
+
+    @include size(7);
+
+    @include xs-block {
+      @include size(12);
+      font-size: rem(34);
+      text-align: left;
+    }
+  }
+
+  &__description {
+    font-size: rem(14);
+    line-height: rem(18);
+    font-weight: 400;
+
+    @include size(6);
+
+    @include xs-block {
+      @include size(12);
+      text-align: left;
+    }
+  }
+
+  &__title,
+  &__description {
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: rem(70);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url('../images/dist/blue-gradient.png');
+    background-position: bottom center;
+    background-repeat: repeat-x;
+  }
+
+}

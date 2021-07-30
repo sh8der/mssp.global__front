@@ -1,0 +1,98 @@
+.contact-form {
+  $self: &;
+  padding: rem(65) 0;
+
+  &--no-padding {
+    padding: 0;
+  }
+
+  &__headline {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  &__form {
+    padding-top: rem(60);
+    @include row-flex();
+    &-wrapper {
+      @include size(10);
+      display: flex;
+      margin: 0 auto;
+    }
+
+    &--no-padding {
+      padding: 0;
+    }
+  }
+
+  &__label {
+    @include size(6);
+    @include col();
+    margin-bottom: rem(18);
+
+    &--full-width {
+      @include size(12);
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: rem(44);
+    border-width: rem(2);
+    border-style: solid;
+    border-color: transparent;
+    border-bottom-color: #fff;
+    background: transparent;
+    color: #fff;
+
+    padding: rem(8) 0;
+
+    transition: padding 0.2s ease-in-out, border-color 0.2s ease-in-out;
+
+    &[rows] {
+      height: auto;
+    }
+
+    &::placeholder {
+      color: #fff;
+      font-size: rem(20);
+      font-weight: 500;
+    }
+
+    &:focus {
+      border: rem(2) solid #fff;
+      padding: rem(8) rem(12);
+      border-color: #fff;
+      &::placeholder {
+        color: rgba($color: #fff, $alpha: 0.5);
+      }
+    }
+  }
+
+  &__submit {
+    @include col();
+
+    margin: 0 auto;
+    border: none;
+    border-radius: rem(5);
+    font-size: rem(14);
+    font-weight: 400;
+    padding: rem(10) rem(38);
+    text-transform: uppercase;
+    color: #fff;
+    background-color: $accent;
+    box-shadow: 0 rem(3) rem(8.6) rem(1.4) rgba($color: #000000, $alpha: 0.35);
+    margin-top: rem(45);
+
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: darken($color: $accent, $amount: 15);
+    }
+
+    &--right-side {
+      margin-left: auto;
+      margin-right: $fields;
+    }
+  }
+}
